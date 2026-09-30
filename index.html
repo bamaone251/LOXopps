@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Load Efficiency Hours Calculator</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card">
+      
+
+
+      <form id="calculator" autocomplete="off">
+        <div class="field-grid">
+          <label class="field">
+            <span>Runs</span>
+            <input id="runs" type="number" inputmode="numeric" min="0" step="1" value="1" required />
+          </label>
+
+          <label class="field">
+            <span>Backhauls</span>
+            <input id="backhauls" type="number" inputmode="numeric" min="0" step="1" value="1" required />
+          </label>
+
+          <label class="field">
+            <span>Diversions</span>
+            <input id="diversions" type="number" inputmode="numeric" min="0" step="1" value="0" required />
+          </label>
+        </div>
+
+        <button type="submit">Calculate Hours</button>
+      </form>
+
+      <section class="result-card" aria-live="polite">
+        <div class="result-label">Hours Needed</div>
+        <div class="result-value" id="hoursResult">1.99</div>
+       
+      </section>
+
+      <section class="breakdown">
+        <div>
+          <span>TARGET EFFICIENCY</span>
+          <strong>0.67</strong>
+        </div>
+        
+        <div>
+          <span>LOADERS NEEDED</span>
+          <strong id="loadersNeeded">0.00</strong>
+        </div>
+
+        <div>
+          <span>1st SHIFT RUNS</span>
+          <strong id="firstShiftRuns">0</strong>
+        </div>
+
+        <div>
+          <span>2nd SHIFT RUNS</span>
+          <strong id="secondShiftRuns">0</strong>
+        </div>
+
+        
+      </section>
+
+      <p class="hint"> <strong>Hours = (Runs + Diversions) ÷ 0.67 + (0.5 × Backhauls)</strong></p>
+  
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

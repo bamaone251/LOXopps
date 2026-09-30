@@ -1,0 +1,7 @@
+services:
+  load-efficiency:
+    build: .
+    container_name: load-efficiency-pwa
+    restart: unless-stopped
+    ports:
+      - "8030:80"
